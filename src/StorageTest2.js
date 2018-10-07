@@ -13,7 +13,7 @@ import {
     Button
 } from 'react-native';
 
-import storage from './storage/index';
+import storage from './storage/ReactNativeStorageUtils';
 
 /**
  * 使用自己封装的storage
@@ -40,19 +40,20 @@ export default class ReactNativeStorageBasics extends Component {
      * 存储数据
      */
     _saveData = () => {
-        storage.save("user",{
-            username:"chenliwu",
-            university:"贺州学院",
+        storage.save("user", {
+            username: "chenliwu",
+            university: "贺州学院",
         });
         alert("存储成功");
     }
 
     /**
      * 读取数据
+     * 适用回调函数来读取数据
      */
     _loadData = () => {
-        storage.load("user",function(data){
-            alert("username:"+data.username+"\nuniversity:"+data.university);
+        storage.load("user", function (data) {
+            alert("username:" + data.username + "\nuniversity:" + data.university);
         });
     }
 
@@ -61,6 +62,7 @@ export default class ReactNativeStorageBasics extends Component {
      */
     _removeData = () => {
         storage.remove("user");
+        alert("删除单个数据成功");
     }
 
 }

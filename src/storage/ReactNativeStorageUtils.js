@@ -83,8 +83,8 @@ const _storage = {
             // 而不能在then以外处理
             // 也没有办法“变成”同步返回
             // 你也可以使用“看似”同步的async/await语法
-            callBack && callBack(ret)
-            return ret
+            callBack && callBack(ret);
+            return ret;
         }).catch(err => {
             //如果没有找到数据且没有sync方法，
             //或者有其他异常，则在catch中返回
@@ -92,9 +92,11 @@ const _storage = {
             switch (err.name) {
                 case 'NotFoundError':
                     // TODO
+                    alert("读取不到数据");
                     break
                 case 'ExpiredError':
                     // TODO
+                    alert("读取不到数据");
                     break
             }
         })
@@ -137,4 +139,5 @@ const _storage = {
     }
 }
 
-export { _storage as storage }
+//export { _storage as storage }
+export default _storage;

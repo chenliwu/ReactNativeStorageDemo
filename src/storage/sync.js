@@ -1,7 +1,7 @@
 /**
  * Created by guangqiang on 2017/11/15.
  */
-import {storage} from './index'
+import { storage } from './ReactNativeStorageUtils'
 
 /**
  * sync方法的名字必须和所存数据的key完全相同
@@ -12,7 +12,7 @@ import {storage} from './index'
 const sync = {
 
     user(params) {
-        let {id, resolve, reject, syncParams: {extraFetchOptions, someFlag}} = params
+        let { id, resolve, reject, syncParams: { extraFetchOptions, someFlag } } = params
         fetch('http://www.baidu.com', {
             method: 'GET',
             body: 'id=' + id,
@@ -45,4 +45,4 @@ const sync = {
     }
 }
 
-export {sync}
+export { sync }
